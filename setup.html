@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Untitled</title>
+
+<script language="Javascript" src="bin/System.js"></script>
+<script language="Javascript" src="bin/Behaviours.js"></script>
+<script language="Javascript">
+
+function hee()
+  {
+	  if((this.currentX == this.targetX) && (this.currentY == this.targetY))
+		  {
+			  var tX = (this.currentX == 500) ? 0 : 500;
+				var tY = (this.currentY == 500) ? 0 : 500;
+			  this.setTargetX(tX);
+				this.setTargetY(tY);
+			}
+		return true;
+	}
+
+var bleck = null;
+	
+function init()
+  {
+	  System.register('Behaviours');
+		
+	  System._initialize();
+		
+		System.Behaviours.attach("elastic",document.getElementById("tda"),"",.07,500,300);
+		
+		System.Behaviours.attach("moveTo",document.getElementById("tester"),"","inoutcubic",0,0,160);
+
+	}
+
+	
+</script>
+</head>
+<body onload="init()">
+
+
+<div id="tester" style="position:absolute; top:500; left:500;">This text is now schmoof.</div>
+<div id="tda" style="position:absolute; top:0; left:0; background-color:#ff0000">s</div>
+
+
+
+</body>
+</html>
